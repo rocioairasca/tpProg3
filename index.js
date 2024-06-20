@@ -146,6 +146,12 @@ app.get('/tasks', async (req, res) => {
     }
 });
 
+
+// Ruta raíz
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+  
 // Escuchamos en el puerto
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

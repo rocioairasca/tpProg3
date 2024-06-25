@@ -8,6 +8,7 @@ const app = express();
 app.use(express.json());
 
 const userRouter = require("./src/controllers/modules/user/user.routes.js");
+const taskRouter = require("./src/controllers/modules/tasks/task.routes.js");
 
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -30,7 +31,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.use(userRouter);
+app.use(userRouter, taskRouter);
 
 var options = {
     explorer: true

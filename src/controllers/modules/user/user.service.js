@@ -17,6 +17,14 @@ async function findOneById(_id) {
     return await userModel.findById(_id).exec();
 }
 
+const update = async (id, updatedUser) => {
+    const user = await userModel.findByIdAndUpdate(id, updatedUser, { new: true }).exec();
+    if (!user) {
+        throw new Error('User not found');
+    }
+    return user;
+};
+
 async function save(user) {
     let _user = new userModel(user);
     return await _user.save();
@@ -42,4 +50,4 @@ async function remove(id) {
     return await userModel.findOneAndDelete({_id: id}).exec();
 }
 
-module.exports = { createIfNotExists, findOneById, save, paginated, remove };
+module.exports = { createIfNotExists, findOneById, save, paginated, remove, update };

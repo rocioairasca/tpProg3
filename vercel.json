@@ -11,12 +11,5 @@
       "src": "/(.*)",
       "dest": "/index.js"
     }
-  ],
-  "projectSettings": {
-    "framework": "node",
-    "env": {
-      "PORT": "3000",
-      "DB_URI": "mongodb+srv://roairasca:rocio1234@tpprog3.yvwuof4.mongodb.net/"
-    }
-  }
+  ]
 }
